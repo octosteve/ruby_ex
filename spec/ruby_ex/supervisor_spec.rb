@@ -2,9 +2,11 @@
 
 RSpec.describe RubyEx::Supervisor do
   it "starts ractors" do
-    supervisor = RubyEx::Supervisor.start([
-      RubyEx::Supervisor::ChildSpec.new('cranky', CrankyProcess, :start, [5])
-    ])
+    supervisor = RubyEx::Supervisor.start(
+      [
+        RubyEx::Supervisor::ChildSpec.new("cranky", CrankyProcess, :start, [5])
+      ]
+    )
 
     children = RubyEx::Supervisor.children(supervisor)
     expect(children.count).to eq(1)
@@ -12,9 +14,11 @@ RSpec.describe RubyEx::Supervisor do
   end
 
   it "has correct starting state" do
-    supervisor = RubyEx::Supervisor.start([
-      RubyEx::Supervisor::ChildSpec.new('cranky', CrankyProcess, :start, [5])
-    ])
+    supervisor = RubyEx::Supervisor.start(
+      [
+        RubyEx::Supervisor::ChildSpec.new("cranky", CrankyProcess, :start, [5])
+      ]
+    )
 
     child = RubyEx::Supervisor.children(supervisor).first
     CrankyProcess.double(child)
@@ -22,9 +26,11 @@ RSpec.describe RubyEx::Supervisor do
   end
 
   it "restarts a crashed process" do
-    supervisor = RubyEx::Supervisor.start([
-      RubyEx::Supervisor::ChildSpec.new('cranky', CrankyProcess, :start, [5])
-    ])
+    supervisor = RubyEx::Supervisor.start(
+      [
+        RubyEx::Supervisor::ChildSpec.new("cranky", CrankyProcess, :start, [5])
+      ]
+    )
 
     child = RubyEx::Supervisor.children(supervisor).first
     CrankyProcess.double(child)

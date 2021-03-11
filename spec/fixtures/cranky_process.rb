@@ -18,16 +18,14 @@ class CrankyProcess
   end
 
   def initialize(state)
-    p state
     @state = state
   end
 
   def double
-    @state = @state * 2
+    @state *= 2
   end
 
   def crash
     raise :hell
   end
 end
-
