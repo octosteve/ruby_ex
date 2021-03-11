@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require "ruby_ex"
+require_relative "fixtures/counter_gen_server.rb"
+require_relative "fixtures/cranky_process.rb"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
