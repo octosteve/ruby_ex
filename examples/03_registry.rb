@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 registry = RubyEx::Registry.start
 p "Registering #{Ractor.current}"
 RubyEx::Registry.add(registry, :a_ractor, Ractor.current)

@@ -1,11 +1,12 @@
 # frozen_string_literal: true
-require 'securerandom'
+
+require "securerandom"
 module RubyEx
   class PubSub
     attr_reader :state
 
     def self.start
-      GenServer.start(self, {}, name: 'PubSub')
+      GenServer.start(self, {}, name: "PubSub")
     end
 
     def self.subscribe(ractor, subscriber = Ractor.current, action)

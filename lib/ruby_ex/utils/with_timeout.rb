@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'timeout'
+require "timeout"
 module WithTimeout
   def receive_with_timeout(timeout)
     Timeout.timeout(timeout) do

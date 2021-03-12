@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 pub_sub = RubyEx::PubSub.start
 ref = RubyEx::PubSub.subscribe(pub_sub, :party_time)
 RubyEx::PubSub.publish(pub_sub, :party_time, { time: "Party Time!" })

@@ -1,8 +1,9 @@
 # frozen_string_literal: true
+
 module RubyEx
   class Registry
     def self.start
-      GenServer.start(self, {}, name: 'Registry')
+      GenServer.start(self, {}, name: "Registry")
     end
 
     def self.add(agent, name, ractor)
@@ -17,7 +18,7 @@ module RubyEx
       GenServer.sync(agent, [:remove, name])
     end
 
-    def initialize(state={})
+    def initialize(state = {})
       @state = state
     end
 
@@ -34,6 +35,7 @@ module RubyEx
     end
 
     private
+
     attr_reader :state
   end
 end

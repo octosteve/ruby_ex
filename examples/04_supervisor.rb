@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "../spec/fixtures/cranky_process.rb"
 supervisor = RubyEx::Supervisor.start(
   [

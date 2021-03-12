@@ -14,7 +14,6 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
-
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/octosteve/ruby_ex/"
 

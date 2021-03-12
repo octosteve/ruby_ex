@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Counter
   attr_reader :state
 
@@ -29,4 +31,3 @@ class Counter
     @state -= dec
   end
 end
-
