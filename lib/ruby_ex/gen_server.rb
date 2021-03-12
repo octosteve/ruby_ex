@@ -4,15 +4,15 @@ module RubyEx
   class GenServer
     def self.start(template_object, state, name:)
       Ractor.new(template_object, state, name: name) do |template_object, state|
-        state = template_object.new(state)
+        instance = template_object.new(state)
         loop do
           case msg = Ractor.receive
             in [:sync, :get_state, from]
-            from.send(state.state)
+            from.send(instance.state)
             in [:sync, [message, *args], from]
-            from.send(state.public_send(message, *args))
+            from.send(instance.public_send(message, *args))
             in [:async, [message, *args]]
-            state.public_send(message, *args)
+            instance.public_send(message, *args)
             in msg
             puts "What?"
             p msg
