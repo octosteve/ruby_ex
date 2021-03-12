@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module RubyEx
   class GenServer
     def self.start(template_object, state, name:)

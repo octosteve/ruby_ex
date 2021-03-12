@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module RubyEx
   class Supervisor
     ChildSpec = Struct.new(:id, :object, :action, :args) do
@@ -8,7 +9,7 @@ module RubyEx
     end
 
     def self.start(child_specs = [])
-      GenServer.start(self, child_specs, name: 'Supervisor')
+      GenServer.start(self, child_specs, name: "Supervisor")
     end
 
     def self.children(supervisor)
@@ -30,6 +31,7 @@ module RubyEx
     end
 
     private
+
     attr_reader :child_specs, :children_map
 
     def start_children
