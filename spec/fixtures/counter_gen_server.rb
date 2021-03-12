@@ -19,15 +19,7 @@ class Counter
     RubyEx::GenServer.get_state(ractor)
   end
 
-  def initialize(state)
-    @state = state
-  end
-
-  def add(inc = 1)
-    @state += inc
-  end
-
-  def subtract(dec = 1)
-    @state -= dec
-  end
+  def initialize(state) = @state = state
+  def add(inc = 1) = @state += inc
+  def subtract(dec = 1) = @state -= dec
 end
